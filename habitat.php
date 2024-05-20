@@ -128,19 +128,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
-    <script>
-        function incrementDetailsCount(animalId) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "increment_counter.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    console.log("Compteur de détails incrémenté");
-                }
-            };
-            xhr.send("id=" + animalId);
-        }
-    </script>
 
 </head>
 
@@ -363,10 +350,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<li class="list-group-item bg-arcadiaLight"><b>ID :</b> ' . $animal['id'] . '</li>';
                 }
                 echo '<div class="dropdown bg-arcadiaLight">
-                <button class="btn d-flex w-100 mx-auto btn-outline-arcadiaTertiary" type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="incrementDetailsCount(' . $animal['id'] . ')">
+                <button class="btn d-flex w-100 mx-auto btn-outline-arcadiaTertiary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Détail de l\'animal
 </button>
-                <ul class="dropdown-menu w-100  bg-arcadiaLight">
+                <ul class="dropdown-menu w-100 bg-arcadiaLight">
               <li class="list-group-item bg-arcadiaLight"><b>Nourriture :</b> ' . $animal['nourriture'] . '</li>
                <li class="list-group-item bg-arcadiaLight"><b>Gramme :</b> ' . $animal['gramme'] . '</li>
                <li class="list-group-item bg-arcadiaLight"><b>Avis du vétérinaire :</b> ' . $animal['avisVeterinaire'] . '</li>
@@ -387,25 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '</div>';
             } ?>
         </div>
-        <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['id'])) {
-        $id = intval($_POST['id']);
         
-        // Incrémenter le compteur de détails
-        $req = $db->prepare("UPDATE animaux SET details_count = details_count + 1 WHERE id = ?");
-        $req->execute(array($id));
-        
-        echo "Success";
-    } else {
-        echo "Invalid ID";
-    }
-} else {
-    echo "Invalid request";
-}
-?>
-
     </div>
 
     <?php
