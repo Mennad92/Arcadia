@@ -1,0 +1,19 @@
+$theme-colors :(
+    primary: #0d6efd,
+    secondary: #6c757d,
+    success: #198754,
+    grey: #e2e2e2,
+    info: #0dcaf0,
+    warning: #deb94d,
+    danger: #9e3d47,
+    light: #f8f9fa,
+    dark: #212529,
+    arcadia : #d5dfd6,
+    arcadiaLight:#e3ded5,
+    arcadiaSecondary : #314328,
+    arcadiaTertiary : #554534,
+    sable : #f5edc4,
+    marais : #b9ac9e,
+    jungle : #758e79);
+;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
