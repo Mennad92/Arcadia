@@ -366,7 +366,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="btn d-flex w-100 mx-auto btn-outline-arcadiaTertiary" type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="incrementDetailsCount(' . $animal['id'] . ')">
     Détail de l\'animal
 </button>
-                <ul class="dropdown-menu w-100 bg-arcadiaLight">
+                <ul class="dropdown-menu w-100  bg-arcadiaLight">
               <li class="list-group-item bg-arcadiaLight"><b>Nourriture :</b> ' . $animal['nourriture'] . '</li>
                <li class="list-group-item bg-arcadiaLight"><b>Gramme :</b> ' . $animal['gramme'] . '</li>
                <li class="list-group-item bg-arcadiaLight"><b>Avis du vétérinaire :</b> ' . $animal['avisVeterinaire'] . '</li>
