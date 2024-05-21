@@ -360,7 +360,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <li class="list-group-item bg-arcadiaLight"><b>Date :</b> ' . $animal['timeDate'] . '</li>
                 </ul>
               </div>';
-                if ($current_user_role['role_name'] == 'admin') {
+                if (isset($_SESSION['connect']) == 1 && $current_user_role['role_name'] == 'admin') {
                     echo '<form action="habitat.php?name=' . $habitats['habitat_name'] . '" method="post" onsubmit="return confirmDelete()">';
                     echo '<input type="hidden" name="id" value="' . $animal['id'] . '">';
                     echo '<input type="hidden" name="action" value="deleteAnimal">';
