@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 try {
-    $db = new PDO('mysql:host=localhost;dbname=arcadia;charset=utf8;port=3307', 'root', '');
+    $db = new PDO('mysql:host=mennadbadmin.mysql.db;dbname=mennadbadmin;charset=utf8;port=3306', 'mennadbadmin', 'Mennad92');
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die();

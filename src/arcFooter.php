@@ -1,8 +1,3 @@
-<?php
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     echo '<div class="bg-success> "Mail envoyé" </div>';
-// }
-?>
 <footer class="mt-5 text-dark pt-3 pb-4 border-top border-arcadiaSecondary border-3 bg-arcadia">
     <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">
