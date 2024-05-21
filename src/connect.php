@@ -1,14 +1,21 @@
 <?php
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
+$host = getenv('DATABASE_HOST') ?: 'localhost';
+$dbname = getenv('DATABASE_NAME') ?: 'arcadia';
+$username = getenv('DATABASE_USER') ?: 'root';
+$password = getenv('DATABASE_PASSWORD') ?: '';
+$port = getenv('DATABASE_PORT') ?: '3307';
+
 try {
-    $db = new PDO('mysql:host=localhost;dbname=arcadia;charset=utf8;port=3307', 'root', '');
+    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8;port=$port", $username, $password);
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die();
 }
-
 
 if (isset($_SESSION['role_id'])) {
     $req = $db->prepare('SELECT * FROM roles WHERE role_id = ?');
