@@ -1,13 +1,14 @@
 # Utiliser l'image officielle PHP avec Apache
 FROM php:8.1-apache
 
-# Installer les dépendances nécessaires
+# Installer les extensions PHP nécessaires et autres dépendances
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
+    && docker-php-ext-install pdo pdo_mysql
 
 # Copier les fichiers de l'application dans le répertoire web du conteneur
 COPY . /var/www/html/
