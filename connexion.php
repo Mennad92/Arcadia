@@ -75,11 +75,11 @@ if (!empty($_POST['mail']) && !empty($_POST['pass'])) {
         <form action="connexion.php" method="post">
           <label for="email" class="form-label fs-4">Utilisateur</label>
           <input type="email" name="mail"
-            class="form-control w-25 text-center mx-auto border border-1 border-arcadiaSecondary" id="password"
+            class="form-control text-center mx-auto border border-1 border-arcadiaSecondary" id="password"
             placeholder="Pseudo">
           <label for="exampleFormControlInput1" class="form-label fs-4">Mot de passe</label>
           <input type="password" name="pass" id="inputPassword6"
-            class="form-control w-25 text-center mx-auto border border-1 border-arcadiaSecondary"
+            class="form-control text-center mx-auto border border-1 border-arcadiaSecondary"
             aria-describedby="passwordHelpInline" placeholder="**********">
           <div class="form-check mt-3 d-flex justify-content-center">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">

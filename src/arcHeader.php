@@ -9,6 +9,8 @@ require_once ('connect.php');
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a href="index.php" id="Arcadia" class="navbar-brand d-md-none"><img src="image/ARCADIA.png"
+                        style="height: 65px;" /></a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto fs-3">
                     <a class="nav-link p-3 my-auto text-arcadiaSecondary" aria-current="page"
@@ -26,7 +28,8 @@ require_once ('connect.php');
                             ?>
                         </ul>
                     </div>
-                    <a href="index.php" class="nav-link p-3"><img src="image/ARCADIA.png" style="height: 200px;" /></a>
+                        <a href="index.php" id="Arcadia" class="nav-link d-none d-md-block"><img src="image/ARCADIA.png"
+                                style="height: 200px;" /></a>
                     <a class="nav-link p-3 my-auto text-arcadiaSecondary" href="#contact">CONTACT</a>
                     <?php
                     if (isset($_SESSION['connect']) && isset($current_user_role) && $current_user_role['role_name'] == 'admin') {

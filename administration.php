@@ -129,15 +129,15 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
     <?php
     include ('src/arcHeader.php');
     ?>
-    <div class="m-5">
+    <div class="mx-auto w-100">
         <div class="m-5 text-center">
-            <div class="card text-center mx-auto w-75 border-2 border-arcadiaSecondary">
+            <div class="card text-center mx-auto border-2 border-arcadiaSecondary">
                 <div class="card-header fs-5 p-3 bg-arcadia border- border-arcadiaSecondary">
                     Connexion
                 </div>
                 <div class="card-body bg-grey p-5">
-                    <h2 class="text-success">Vous êtes connecté en tant que </h2>
-                    <p class="text-arcadiaTertiary fs-3 m-3">Administateur</p>
+                    <h2 class="text-success">Vous êtes connecté</h2>
+                    <p class="text-arcadiaTertiary fs-3 m-3">Admin</p>
 
                     <p class="fs-4">Vous pouvez modifier les données du site.</p>
                     <button type="submit"
@@ -151,24 +151,24 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
         </div>
     </div>
     <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center mx-auto my-5">
-        <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">Modifier les
+        <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-75 rounded p-3">Modifier les
             horaires du zoo</h3>
         <form method="post" action="administration.php">
             <label for="semaine" class="p-3 text-arcadiaSecondary">Horaires de la semaine (Lundi - Vendredi) :</label>
             <input type="text" id="semaine" name="semaine"
-                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-25"
+                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-75"
                 placeholder="format : ?h à ?h" required><br>
 
             <label for="weekend" class="p-3 text-arcadiaSecondary">Horaires du weekend :</label>
             <input type="text" id="weekend" name="weekend"
-                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-25"
+                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-75"
                 placeholder="format : ?h à ?h" required><br>
 
             <input type="submit"  class="btn btn-arcadia text-arcadiaTertiary border-arcadiaTertiary border-1 m-3" name="update_hours" value="Mettre à jour">
         </form>
     </div>
     <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center">
-        <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">Utilisateur</h3>
+        <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-75 rounded p-3">Utilisateur</h3>
         <ul class="list-group">
             <?php foreach ($membre as $m) { ?>
                 <li class="list-group-item bg-grey">
@@ -204,20 +204,20 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
             <form action="administration.php" method="post">
                 <label for="mail" class="form-label fs-4">Adresse email</label>
                 <input type="email" name="mail"
-                    class="form-control w-25 text-center mx-auto border border-1 border-arcadiaSecondary" id="mail"
+                    class="form-control w-100 text-center mx-auto border border-1 border-arcadiaSecondary" id="mail"
                     placeholder="Mail">
 
         </div>
         <div class="mb-3 text-center">
             <label for="pseudo" class="form-label fs-4">Pseudo</label>
             <input type="text" name="pseudo"
-                class="form-control w-25 text-center mx-auto border border-1 border-arcadiaSecondary"
+                class="form-control w-100 text-center mx-auto border border-1 border-arcadiaSecondary"
                 placeholder="Pseudo">
         </div>
         <div class="mb-3 text-center">
             <label for="pass" class="form-label fs-4">Mot de passe</label>
             <input type="password" name="pass" id="pass"
-                class="form-control w-25 text-center mx-auto border border-1 border-arcadiaSecondary"
+                class="form-control w-100 text-center mx-auto border border-1 border-arcadiaSecondary"
                 aria-describedby="passwordHelpInline" placeholder="**********">
         </div>
         <div class="mb-3 text-center">

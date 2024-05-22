@@ -73,10 +73,9 @@ $avisee = $db->query('SELECT * FROM avis');
                   <div class="carousel-caption">
           
                      <h3 class="text-shadow "><a class="nav-link my-auto fs-1 text-sable" href="habitat.php?name=' . $habitat['habitat_name'] . '">VENEZ
-                        VISITER LES
-                        DIFFERENTS HABITATS DES ANIMAUX
+                        VISITER LES DIFFERENTS HABITATS DES ANIMAUX
                     </h3>
-                    <b class="text-arcadiaSecondary fs-3">' . $habitat['title'] . '</b></a>
+                    <b class="text-danger fs-3">' . $habitat['title'] . '</b></a>
                   </div>
                 </div>';
       }
@@ -150,10 +149,10 @@ $avisee = $db->query('SELECT * FROM avis');
   <div class="mb-3 text-center">
     <form action="index.php" method="post">
       <label for="pseudo" class="form-label">Pseudo</label>
-      <input type="text" class="form-control w-50 text-center mx-auto border border-1 border-arcadiaSecondary"
+      <input type="text" class="form-control w-75 text-center mx-auto border border-1 border-arcadiaSecondary"
         id="pseudo" name="pseudo" placeholder="Pseudo">
       <label for="comment" class="form-label">Avis</label>
-      <input class="form-control w-50 text-center mx-auto border-1 border-arcadiaSecondary" id="comment" name="comment"
+      <input class="form-control w-75 text-center mx-auto border-1 border-arcadiaSecondary" id="comment" name="comment"
         placeholder="Laissez nous votre avis." rows="3"></input>
       <button type="submit" class="mt-2 btn btn-outline-arcadiaTertiary">Envoyer</button>
     </form>
@@ -182,7 +181,7 @@ $avisee = $db->query('SELECT * FROM avis');
       }
     }
     ?>
-    <div class="container my-5 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
+    <div class="container my-5 w-75 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
       <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">AVIS</h3>
       <ul class="list-group">
         <?php while ($a = $avisee->fetch()) { ?>
@@ -212,7 +211,7 @@ $avisee = $db->query('SELECT * FROM avis');
 
 
   <!-- CAROUSEL AVIS -->
-  <div class="container ">
+  <div class="container">
     <h3 class="text-center mx-auto text-arcadiaTertiary ">AVIS DU ZOO</h3>
     <p class="text-center mx-auto text-arcadiaTertiary mb-5">Nos visiteur ont apprécié et ont tenu a nous en informé</p>
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
