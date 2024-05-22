@@ -2,14 +2,15 @@
     <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">
             <div class="col-md-4 col-lg-4 col-xl-4">
-                <p><img src="image/ARCADIA.png" style="height: 300px;" /></p>
+              <a href="index.php">  <img src="image/ARCADIA.png" style="height: 300px;" /></a>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="mb-4 font-weight-bold text-arcadiaSecondary">LOCALISATION</h5>
                 <p>Parc Zoologique De Brocéliande <br> Forêt de Brocéliande, <br> Paimpont (35380) <br> Ille-et-Vilaine
                 </p>
                 <h5 class="mb-4 font-weight-bold text-arcadiaSecondary">HORAIRE D'OUVERTURE</h5>
-                <p>Toute la semaine : 9h à 18h<br>Week-end : 9h à 20h</p>
+                <p>Toute la semaine : <span id="semaine">9h à 18h</span></p>
+                <p>Week-End : <span id="weekend">9h à 20h</span></p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 id="contact" class="mb-4 font-weight-bold text-arcadiaSecondary">CONTACT</h5>
@@ -54,4 +55,6 @@
             </div>
         </div>
     </div>
+        
 </footer>
+<div class="p-2 bg-arcadia text-center">Copyright © Arcadia - 2024</div>

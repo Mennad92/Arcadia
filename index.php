@@ -108,7 +108,7 @@ $avisee = $db->query('SELECT * FROM avis');
               soit
               la savane, jusqu'à la jungle en passant par les grands marais.</p>
             <p></p>
-            <a href="#" class="btn btn-arcadiaTertiary">Faire un tour</a>
+            <a href="services.php#id1" class="btn btn-arcadiaTertiary">Faire un tour</a>
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ $avisee = $db->query('SELECT * FROM avis');
               equipe
               d'expert qui pourront vous renseigner sur les animaux des differents habitats, leurs habitudes
               alimentaires et leurs modes de vie. </p>
-            <a href="#" class="btn btn-arcadiaTertiary">Let's go</a>
+            <a href="services.php#id2" class="btn btn-arcadiaTertiary">Let's go</a>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@ $avisee = $db->query('SELECT * FROM avis');
             <h5 class="card-title text-arcadiaTertiary">RESTAURANTS</h5>
             <p class="card-text">Le tour du zoo, ça creuse. Venez vous restaurez dans nos restaurant situé un peu
               partout dans le parc et à proximité de la nature et des animaux. </p>
-            <a href="#" class="btn btn-arcadiaTertiary">J'ai Faim !</a>
+            <a href="services.php#id3" class="btn btn-arcadiaTertiary">J'ai Faim !</a>
           </div>
         </div>
       </div>

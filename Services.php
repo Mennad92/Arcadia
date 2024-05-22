@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             LES DIFFERENTS SERVICES DU ZOO
         </h2>
         <?php
-        if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'employe') { ?>
+        if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') { ?>
             <div class="container w-75 mx-auto my-5 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
                 <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-50 rounded p-3">Modifier Les
                     Services

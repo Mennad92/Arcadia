@@ -1,6 +1,6 @@
 <?php
 require_once ('src/connect.php');
-if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
+if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
     if (isset($_GET['role']) && !empty($_GET['role'])) {
         $role = (int) $_GET['role'];
         $req = $db->prepare('UPDATE users SET role_id = 1 WHERE id = ?');
@@ -70,6 +70,26 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
         header('location:administration.php?success=1');
         exit();
     }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['update_hours'])) {
+            // Récupérer les données du formulaire
+            $semaine = htmlspecialchars($_POST['semaine']);
+            $weekend = htmlspecialchars($_POST['weekend']);
+
+            // Chemin vers le fichier à mettre à jour
+            $file_path = 'src/arcFooter.php';
+
+            // Lire le contenu du fichier
+            $file_contents = file_get_contents($file_path);
+
+            // Remplacer les anciennes lignes des horaires avec les nouvelles
+            $new_contents = preg_replace('/<span id="semaine">.*?<\/span>/', '<span id="semaine">' . $semaine . '</span>', $file_contents);
+            $new_contents = preg_replace('/<span id="weekend">.*?<\/span>/', '<span id="weekend">' . $weekend . '</span>', $new_contents);
+            // Écrire le nouveau contenu dans le fichier
+            file_put_contents($file_path, $new_contents);
+        }
+    }
     $req = $db->query('SELECT * FROM users');
     $membre = $req->fetchAll();
 
@@ -117,7 +137,7 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
                 </div>
                 <div class="card-body bg-grey p-5">
                     <h2 class="text-success">Vous êtes connecté en tant que </h2>
-                    <p class="text-arcadiaTertiary fs-3 m-3"><?= $_SESSION['mail']; ?></p>
+                    <p class="text-arcadiaTertiary fs-3 m-3"><?= $current_user_role['role_name']; ?></p>
 
                     <p class="fs-4">Vous pouvez modifier les données du site.</p>
                     <button type="submit"
@@ -130,6 +150,23 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
             </div>
         </div>
     </div>
+    <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center mx-auto my-5">
+        <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">Modifier les
+            horaires du zoo</h3>
+        <form method="post" action="administration.php">
+            <label for="semaine">Horaires de la semaine (Lundi - Vendredi) :</label>
+            <input type="text" id="semaine" name="semaine"
+                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-25"
+                placeholder="format : ?h à ?h" required><br>
+
+            <label for="weekend">Horaires du weekend :</label>
+            <input type="text" id="weekend" name="weekend"
+                class="form-control border-1 border-arcadiaSecondary text-center d-flex mx-auto w-25"
+                placeholder="format : ?h à ?h" required><br>
+
+            <input type="submit"  class="btn btn-arcadia text-arcadiaTertiary border-arcadiaTertiary border-1" name="update_hours" value="Mettre à jour">
+        </form>
+    </div>
     <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center">
         <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">Utilisateur</h3>
         <ul class="list-group">
@@ -137,23 +174,14 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
                 <li class="list-group-item bg-grey">
                     <?= $m['pseudo'] ?> : <?= $m['mail'] ?> : <?= $m['role_id']; ?> :
                     <?php if ($m['role_id'] == 1) { ?>
-                        <span class="text-success"><b>Administateur |</b></span> <b><a
+                        <span class="text-success"><b>Administateur </b></span> <b><a
                                 class="nav-link d-inline text-arcadiaTertiary"
-                                href="administration.php?role=<?= $m['id'] ?>"></b><b><a
-                                class="nav-link d-inline text-arcadiaTertiary"
-                                href="administration.php?veterinaire=<?= $m['id'] ?>">Vétérinaire ? - </a></b>
-                        <b><a class="nav-link d-inline text-arcadiaTertiary" href="administration.php?employe=<?= $m['id'] ?>">
-                                Employé ? - </a></b>
-                        <b><a class="nav-link d-inline text-danger" href="administration.php?supprimer=<?= $m['id'] ?>"
-                                onclick="return confirmDelete()">Supprimer ?</a></b>
-                        </a></b>
+                                href="administration.php?role=<?= $m['id'] ?>"></b>
                     <?php } else if ($m['role_id'] == 2) { ?>
                             <span class="text-success"><b>Vétérinaire |</b></span> <b><a
                                     class="nav-link d-inline text-arcadiaTertiary"
-                                    href="administration.php?role=<?= $m['id'] ?>"></b>
-                            <b><a class="nav-link d-inline text-arcadiaTertiary"
-                                    href="administration.php?administrateur=<?= $m['id'] ?>">
-                                    Administrateur ? - </a></b><b><a class="nav-link d-inline text-arcadiaTertiary"
+                                    href="administration.php?role=<?= $m['id'] ?>"></b><b><a
+                                    class="nav-link d-inline text-arcadiaTertiary"
                                     href="administration.php?employe=<?= $m['id'] ?>">Employé ? - </a></b>
                             <b><a class="nav-link d-inline text-danger" href="administration.php?supprimer=<?= $m['id'] ?>"
                                     onclick="return confirmDelete()">Supprimer ?</a></b>
@@ -162,8 +190,6 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin'){
                                 <span class="text-success"><b>Employé |</b></span> <b><a class="nav-link d-inline text-arcadiaTertiary"
                                         href="administration.php?role=<?= $m['id'] ?>"></b>
                                 <b><a class="nav-link d-inline text-arcadiaTertiary"
-                                        href="administration.php?administrateur=<?= $m['id'] ?>">
-                                        Administrateur ? - </a></b><b><a class="nav-link d-inline text-arcadiaTertiary"
                                         href="administration.php?veterinaire=<?= $m['id'] ?>">Vétérinaire ? - </a></b>
                                 <b><a class="nav-link d-inline text-danger" href="administration.php?supprimer=<?= $m['id'] ?>"
                                         onclick="return confirmDelete()">Supprimer ?</a></b>
