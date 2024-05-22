@@ -7,7 +7,7 @@ $services = $req->fetchAll();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['action'] == "modifierService") {
-        if (!empty($_POST['titre']) && !empty($_POST['images']) && !empty($_POST['descriptions'])){
+        if (!empty($_POST['titre']) && !empty($_POST['images']) && !empty($_POST['descriptions'])) {
             $id = htmlspecialchars($_POST['id']);
             $titre = htmlspecialchars($_POST['titre']);
             $images = htmlspecialchars($_POST['images']);
@@ -17,15 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $req = $db->prepare('UPDATE services SET titre = ?, images = ?, descriptions = ? WHERE id = ?');
             $success = $req->execute(array($titre, $images, $descriptions, $id));
 
+            // Rediriger vers la page principale avec un message de succès ou d'erreur
             if ($success) {
-                // Rediriger vers la page principale avec un message de succès
                 header('location:services.php?success=1&message=Service modifié avec succès');
                 exit();
             } else {
                 echo "Erreur lors de la mise à jour du service.";
             }
         } else {
-            echo "Veuillez remplir tous les champs.";
+            header('location:services.php?error=1&message=Veuillez remplir tous les champs.');
         }
     }
 }
@@ -48,7 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include ('src/arcHeader.php');
     ?>
     <div class="container">
-        <h2 class="text-arcadiaTertiary bg-grey m-5 text-center p-5 border-2 border border-arcadiaTertiary rounded mx-auto w-75 shadow-lg text-arcadiaSecondary">
+        <h2
+            class="text-arcadiaTertiary bg-grey m-5 text-center p-5 border-2 border border-arcadiaTertiary rounded mx-auto w-75 shadow-lg text-arcadiaSecondary">
             LES DIFFERENTS SERVICES DU ZOO
         </h2>
         <?php
@@ -57,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-50 rounded p-3">Modifier Les
                     Services
                 </h3>
+                <!--Formulaire modif services-->
                 <form action="services.php" method="post">
                     <div class="mb-3 text-center">
                         <label for="nourriture" class="form-label text-arcadiaSecondary fs-4">Titre actuel</label>
@@ -86,12 +88,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" class="mx-auto btn m-2 btn-outline-arcadiaTertiary">Modifier</button>
                 </form>
             </div>
-
-        <?php } ?>
+            <?php
+            // Affichage des messages d'erreur ou de succès
+            if (isset($_GET['error'])) {
+                if (isset($_GET['message'])) {
+                    echo '<div class="container"><div class="rounded bg-danger alert-success p-5 text-arcadia text-center">Veuillez remplir tout les champs.</div></div>';
+                }
+            } else if (isset($_GET['success'])) {
+                echo '<div class="container"><div class="rounded bg-success alert-success p-5 text-arcadia text-center">Modification réussie.</div></div>';
+            }
+        } ?>
         <div class="mx-auto">
             <?php foreach ($services as $service) {
                 echo '<div class="card my-5 border border-2 border-arcadiaSecondary shadow-lg">
-                        <img src="'. htmlspecialchars($service['images']) . '" class="card-img" alt="Restaurant">
+                        <img src="' . htmlspecialchars($service['images']) . '" class="card-img" alt="Restaurant">
                         <div class="card-img-overlay">
                             <b><a href="#id' . $service['id'] . '" class="nav-link my-auto shadow-lg text-center fs-3 text-arcadia">' . htmlspecialchars($service['titre']) . '</b></a>
                         </div>

@@ -113,9 +113,9 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
         function confirmDelete() {
             var confirmation = confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?");
             if (confirmation) {
-                return true; // Autorise la suppression en suivant le lien
+                return true; 
             } else {
-                return false; // Annule la suppression
+                return false; 
             }
         }
     </script>
@@ -129,6 +129,7 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
     <?php
     include ('src/arcHeader.php');
     ?>
+    <!-- Ecran et Deconnexion -->
     <div class="mx-auto w-100">
         <div class="m-5 text-center">
             <div class="card text-center mx-auto border-2 border-arcadiaSecondary">
@@ -150,6 +151,7 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
             </div>
         </div>
     </div>
+    <!-- modification horaire -->
     <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center mx-auto my-5">
         <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-75 rounded p-3">Modifier les
             horaires du zoo</h3>
@@ -167,6 +169,7 @@ if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'admin') {
             <input type="submit"  class="btn btn-arcadia text-arcadiaTertiary border-arcadiaTertiary border-1 m-3" name="update_hours" value="Mettre à jour">
         </form>
     </div>
+    <!-- Gestion Utilisateur -->
     <div class="container rounded border border-2 bg-grey border-arcadiaSecondary text-center">
         <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-75 rounded p-3">Utilisateur</h3>
         <ul class="list-group">

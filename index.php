@@ -159,27 +159,28 @@ $avisee = $db->query('SELECT * FROM avis');
   </div>
   <!--CAROUSEL AVIS -->
   <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $pseudo = $_POST['pseudo'];
+    $avis = $_POST['comment'];
+
+    // Assurez-vous que les champs ne sont pas vides
+    if (!empty($pseudo) && !empty($avis)) {
+      // Connexion à la base de données
+  
+      // Préparation de la requête SQL pour insérer l'avis dans la base de données
+      $req = $db->prepare('INSERT INTO avis(pseudo, comment) VALUES (?, ?)');
+      $req->execute(array($pseudo, $avis));
+    } else {
+      // En cas de champs vides
+      echo "Veuillez remplir tous les champs.";
+      echo $pseudo;
+    }
+  }
   if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'employe') {
     // Vérification si l'utilisateur est connecté en tant qu'employé
   
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // Récupération des données du formulaire
-      $pseudo = $_POST['pseudo'];
-      $avis = $_POST['comment'];
 
-      // Assurez-vous que les champs ne sont pas vides
-      if (!empty($pseudo) && !empty($avis)) {
-        // Connexion à la base de données
-  
-        // Préparation de la requête SQL pour insérer l'avis dans la base de données
-        $req = $db->prepare('INSERT INTO avis(pseudo, comment) VALUES (?, ?)');
-        $req->execute(array($pseudo, $avis));
-      } else {
-        // En cas de champs vides
-        echo "Veuillez remplir tous les champs.";
-        echo $pseudo;
-      }
-    }
     ?>
     <div class="container my-5 w-75 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
       <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-25 rounded p-3">AVIS</h3>

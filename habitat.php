@@ -101,8 +101,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-// Vérifier si l'ID de l'animal est défini dans la requête POST
-
 
 ?>
 
@@ -122,9 +120,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function confirmDelete() {
             var confirmation = confirm("Êtes-vous sûr de vouloir supprimer cet animal ?");
             if (confirmation) {
-                return true; // Autorise la suppression en suivant le lien
+                return true; 
             } else {
-                return false; // Annule la suppression
+                return false;
             }
         }
     </script>
@@ -237,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    <!--FORM DETAIL VETO-->
+    <!--FORM DETAIL Employer-->
     <?php if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'employe') { ?>
         <div class="container w-75 mx-auto my-5 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
             <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-50 rounded p-3">Details employer
@@ -272,6 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
+    <!--FORM DETAIL Employer-->
     <?php if (isset($_SESSION['connect']) && $current_user_role['role_name'] == 'veterinaire') { ?>
         <div class="container w-75 mx-auto my-5 rounded border border-2 bg-grey border-arcadiaSecondary text-center">
             <h3 class="bg-arcadia mx-auto my-3 border border-1 border-arcadiaSecondary w-50 rounded p-3">Details Vétérinaire
