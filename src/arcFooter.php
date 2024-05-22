@@ -57,4 +57,4 @@
     </div>
         
 </footer>
-<div class="p-2 bg-arcadia text-center">Copyright © Arcadia - 2024</div>
+<div class="p-2 bg-arcadia text-arcadiaTertiary text-center">Copyright © Arcadia - 2024</div>
