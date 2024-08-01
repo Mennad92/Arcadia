@@ -9,12 +9,15 @@ Le Zoo de Brocéliande - Arcadia est un projet visant à sensibiliser le public 
 ## Fonctionnalités
 
 - **Explorer :** Plongez dans l'univers du Zoo de Brocéliande à travers des photos et des descriptions détaillées des animaux qui y résident.
-- **Activités :** Découvrez une variété d'activités ludiques et éducatives pour toute la famille, telles que des visites guidées, des restaurants et des balades en train interactifs.
+- **Activités :** Découvrez une variété d'activités ludiques et éducatives pour toute la famille, telles que des visites guidées, des restaurants et des balades en train.
 
+## Installation
+
+Le site du Zoo - Arcadia est déjà déployé sur Internet et accessible à l'adresse suivante : mennad.fr, Vous pouvez explorer le site en visitant ce lien dans votre navigateur web.
 
 ## Contribution
 
-Nous accueillons les contributions de la communauté pour enrichir l'expérience du Zoo de Brocéliande - Arcadia. Si vous souhaitez contribuer, veuillez laisser un avis sur la page d'accueil du zoo.
+Nous accueillons les contributions de la communauté pour enrichir l'expérience d'Arcadia. Si vous souhaitez contribuer, veuillez laisser un avis sur la page d'accueil du zoo.
 
 ## Retour d'information
 
