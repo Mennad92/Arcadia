@@ -120,10 +120,9 @@ $avisee = $db->query('SELECT * FROM avis');
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title text-arcadiaTertiary">LES GUIDES</h5>
-            <p class="card-text">Envie d'en apprendre plus sur vos animaux favoris ? Faites vous guidez par notre
-              equipe
-              d'expert qui pourront vous renseigner sur les animaux des differents habitats, leurs habitudes
-              alimentaires et leurs modes de vie. </p>
+            <p class="card-text">Envie d'en apprendre plus sur vos animaux favoris ? Faites vous guidez par notre équipe
+              d'experts qui pourront vous renseigner sur les animaux des différents habitats, leurs habitudes
+              alimentaires et leurs modes de vie.</p>
             <a href="services.php#id2" class="btn btn-arcadiaTertiary">Let's go</a>
           </div>
         </div>
@@ -137,7 +136,7 @@ $avisee = $db->query('SELECT * FROM avis');
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title text-arcadiaTertiary">RESTAURANTS</h5>
-            <p class="card-text">Le tour du zoo, ça creuse. Venez vous restaurez dans nos restaurant situé un peu
+            <p class="card-text">Le tour du zoo, ça creuse. Venez vous restaurer dans nos restaurants situés un peu
               partout dans le parc et à proximité de la nature et des animaux. </p>
             <a href="services.php#id3" class="btn btn-arcadiaTertiary">J'ai Faim !</a>
           </div>
@@ -214,7 +213,8 @@ $avisee = $db->query('SELECT * FROM avis');
   <!-- CAROUSEL AVIS -->
   <div class="container">
     <h3 class="text-center mx-auto text-arcadiaTertiary ">AVIS DU ZOO</h3>
-    <p class="text-center mx-auto text-arcadiaTertiary mb-5">Nos visiteur ont apprécié et ont tenu a nous en informé</p>
+    <p class="text-center mx-auto text-arcadiaTertiary mb-5">Nos visiteurs ont apprécié et ont tenu à nous en informé.
+    </p>
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div
         class="carousel-inner text-arcadiaSecondary bg-light rounded border border-1 border-arcadiaSecondary w-75 mx-auto ">

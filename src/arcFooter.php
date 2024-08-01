@@ -2,7 +2,7 @@
     <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">
             <div class="col-md-4 col-lg-4 col-xl-4">
-              <a href="index.php">  <img src="image/ARCADIA.png" style="height: 300px;" /></a>
+                <a href="index.php"> <img src="image/ARCADIA.png" style="height: 300px;" /></a>
             </div>
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="mb-4 font-weight-bold text-arcadiaSecondary">LOCALISATION</h5>
@@ -16,7 +16,7 @@
                 <h5 id="contact" class="mb-4 font-weight-bold text-arcadiaSecondary">CONTACT</h5>
                 <p>
                     <img src="image/envelope.ico" style="height: 15px;" alt=""><br>
-                </p> <i>Vous pouvez contacté par mail en cliquant ici : </i><br>
+                </p> <i>Vous pouvez nous contacter par mail en cliquant ici : </i><br>
                 <button class="btn btn-outline-arcadiaTertiary mt-4 px-2" data-bs-toggle="modal"
                     data-bs-target="#modalMail">mail</button>
                 <!--modal-->
@@ -55,6 +55,6 @@
             </div>
         </div>
     </div>
-        
+
 </footer>
 <div class="p-2 bg-arcadia text-arcadiaTertiary text-center">Copyright © Arcadia - 2024</div>
