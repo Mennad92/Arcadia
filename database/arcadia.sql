@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : jeu. 01 août 2024 à 02:35
+-- Généré le : jeu. 01 août 2024 à 03:43
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -178,9 +178,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `mail`, `pseudo`, `pass`, `secrets`, `dates`, `role_id`) VALUES
-(7, 'boutaleb.mennad@gmail.com', 'Mennad', '$2y$10$RuOLOcygfchCtnpetVqAjOeKFHCWjPt9zExI0XKJ68bqND6Ug3ytu', 'cb66c715e41562ac2643679c881b7f', '2024-05-06 21:13:16', 1),
-(17, 'azer@hotmail.fr', 'azer', '$2y$10$l/Fh/E41LN2KOnnUoOmhNOPtyoEiwdVu1hAGlYCx09/rzmEMS8p7i', '33e1e6391b37249f45f8b836be5cf6', '2024-05-12 19:29:19', 2),
-(18, 'azer@gmail.fr', 'azer', '$2y$10$Zd4u1VdALLVwqPnI7E1luuoLe97YDWI30eVEnuMfltjkhpcfRCj4e', '2c11aa8e654d544d6eaffee521ed24', '2024-05-13 00:06:28', 3);
+(7, 'Administrateur@gmail.com', '', '$2y$10$RuOLOcygfchCtnpetVqAjOeKFHCWjPt9zExI0XKJ68bqND6Ug3ytu', 'cb66c715e41562ac2643679c881b7f', '2024-05-06 21:13:16', 1);
 
 --
 -- Index pour les tables déchargées
